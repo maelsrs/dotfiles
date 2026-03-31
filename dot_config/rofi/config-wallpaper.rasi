@@ -1,0 +1,108 @@
+// Config //
+configuration {
+    show-icons:                  true;
+    font:                        "JetBrainsMono Nerd Font Mono 10";
+    icon-theme:                  "Tela-circle-dracula";
+}
+
+@theme "~/.config/rofi/themes/theme.rasi"
+
+// Main //
+window {
+    height:                      30em;
+    width:                       55em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border-color:                @main-br;
+    background-color:            @main-bg;
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "listbox" ];
+    background-color:            transparent;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     1.2em;
+    children:                    [ "entry" ];
+    background-color:            @main-bg;
+}
+entry {
+    border-radius:               0em;
+    border:                      1px;
+    border-color:                #EAB2C2;
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.8em;
+    text-color:                  #83A3BB;
+    background-color:            transparent;
+    placeholder:                 "select wallpaper...";
+    placeholder-color:           #83A3BB;
+    cursor:                      text;
+}
+
+// Lists //
+listbox {
+    padding:                     1.15em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+    background-color:            @main-bg;
+}
+listview {
+    padding:                     0em;
+    spacing:                     0.5em;
+    enabled:                     true;
+    columns:                     5;
+    lines:                       2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.3em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  #EBDDBC;
+    orientation:                 vertical;
+}
+element selected.normal {
+    background-color:            #EAB2C2;
+    text-color:                  #1B1E25;
+    border-radius:               5px;
+}
+element-icon {
+    size:                        7em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+    padding:                     0.5em;
+}
