@@ -15,7 +15,7 @@ WALLPAPERS=(
 
 PACMAN_PKGS=(
     hyprland hyprpicker xdg-desktop-portal-hyprland quickshell
-    waybar rofi swaync kitty thunar tumbler ranger
+    waybar rofi swaync kitty thunar tumbler
     brightnessctl cliphist grim slurp pavucontrol wl-clipboard awww
     networkmanager network-manager-applet bluez-utils
     btop fzf eza git jq neovim zsh fastfetch swayidle

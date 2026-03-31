@@ -11,11 +11,11 @@ Managed with [chezmoi](https://www.chezmoi.io/).
 | Bar | `waybar/` | Waybar: workspaces, network stats, battery, clock, tray |
 | Launcher | `rofi/` | Rofi: drun, clipboard (cliphist), wallpaper selector, 9 styles |
 | Terminal | `kitty/` | Kitty with Catppuccin Mocha theme |
-| Editor | `nvim/` | Neovim with NvChad, LSP, conform, lazy.nvim |
+| Editor | `Code - OSS/`, `nvim/` | VS Code (main), Neovim (NvChad, LSP, lazy.nvim) |
 | Notifs | `swaync/` | SwayNC with Catppuccin theme, power/lock/DND buttons |
 | Monitor | `btop/` | Btop system monitor |
 | Audio | `cava/`, `catnip/` | Audio visualizers |
-| Files | `ranger/` | Ranger file manager |
+| Files | — | Thunar |
 | Fetch | `fastfetch/` | System info on terminal launch |
 | Spotify | `spicetify/` | Spotify customization |
 | Wallpaper | `hypr/UserScripts/` | Wallpaper selector (rofi) with awww + mpvpaper support |
@@ -54,7 +54,7 @@ gsettings set org.gnome.desktop.interface font-name 'Cantarell 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaCove Nerd Font Mono 9'
 ```
 
-Also update `/home/.config/xsettingsd/xsettingsd.conf`:
+Also update `~/.config/xsettingsd/xsettingsd.conf`:
 ```
 Net/ThemeName "catppuccin-mocha-pink-standard+default"
 Net/IconThemeName "Adwaita"
@@ -78,10 +78,10 @@ xfconf-query -c thunar -p /misc-single-click -n -t bool -s true
 
 ```bash
 sudo pacman -S hyprland hyprpicker xdg-desktop-portal-hyprland quickshell \
-  waybar rofi swaync kitty thunar tumbler ranger \
+  waybar rofi swaync kitty thunar tumbler \
   brightnessctl cliphist grim slurp pavucontrol wl-clipboard awww \
   networkmanager network-manager-applet bluez-utils \
-  btop fzf eza git jq neovim zsh fastfetch \
+  btop fzf eza git jq neovim zsh fastfetch swayidle \
   ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd cantarell-fonts \
   bibata-cursor-theme-bin
 ```
