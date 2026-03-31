@@ -22,9 +22,25 @@ Managed with [chezmoi](https://www.chezmoi.io/).
 | GTK | `gtk-4.0/` | Catppuccin Mocha Pink GTK4 theme |
 | Scripts | `hyprdots/scripts/` | globalcontrol, cliphist, rofilaunch |
 
-## Manual setup (not in dotfiles)
+## Installation
 
-These settings can't be tracked by chezmoi and must be applied manually after install.
+### Quick start
+
+```bash
+# install chezmoi and apply dotfiles
+pacman -S chezmoi
+chezmoi init --apply maelsrs/dotfiles
+
+# run the bootstrap script (packages, themes, wallpapers, etc.)
+~/.local/share/chezmoi/install_after_apply.sh
+```
+
+The script installs everything automatically: packages, oh-my-zsh, GTK theme, wallpapers, pywal, and prompts (y/n) for system-level stuff (SDDM, GRUB, lockscreen).
+
+---
+
+<details>
+<summary><b>Manual setup (click to expand)</b></summary>
 
 ### 1. GTK Theme
 
@@ -137,3 +153,5 @@ GRUB_THEME="/boot/grub/themes/joker/theme.txt"
 ```
 
 Then run `sudo grub-mkconfig -o /boot/grub/grub.cfg` to apply.
+
+</details>
