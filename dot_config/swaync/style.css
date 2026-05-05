@@ -1,183 +1,154 @@
-@import "themes/catmocha.css";
+/* Swaync - Catppuccin Mocha / Bocchi rice */
 
-/* ---------------- Base Variables ---------------- */
-
-:root {
-
-  --cc-bg: alpha(@surface_container_high, 0.80);
-
-  --noti-bg: alpha(@surface_container, 0.85);
-  --noti-border-color: @outline_variant;
-
-  --text-color: @on_surface;
-
-  --border-radius: 14px;
-
-  --notification-shadow:
-    0 2px 6px rgba(0,0,0,0.35);
-}
-
-/* ---------------- Transparent Window ---------------- */
-
-notificationwindow,
-blankwindow {
+notificationwindow, blankwindow {
   background: transparent;
 }
 
-/* ---------------- OLD Notification Style (Compact) ---------------- */
+/* Control center panel */
+.control-center {
+  background: rgba(27, 30, 37, 0.92);
+  border-radius: 14px;
+  border: 1px solid rgba(234, 178, 194, 0.3);
+  padding: 10px;
+  font-family: "JetBrainsMono Nerd Font";
+}
 
-.notification-row {
-  background: none;
-  outline: none;
+/* Title bar */
+.widget-title {
+  color: #ebddbc;
+  font-size: 14px;
+  font-weight: bold;
   margin: 4px 8px;
 }
 
+.widget-title button {
+  background: rgba(234, 178, 194, 0.15);
+  color: #EAB2C2;
+  border: 1px solid rgba(234, 178, 194, 0.3);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.widget-title button:hover {
+  background: #EAB2C2;
+  color: #1b1e25;
+}
+
+/* Notifications */
+.notification-row {
+  background: none;
+  outline: none;
+  margin: 4px 4px;
+}
+
 .notification-row .notification-background .notification {
-
-  background: var(--noti-bg);
-
-  border-radius: var(--border-radius);
-  border: 1px solid var(--noti-border-color);
-
-  padding: 10px 12px;   /* ↓ Reduced */
-  box-shadow: var(--notification-shadow);
-
+  background: rgba(36, 40, 48, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(131, 166, 191, 0.2);
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   transition: 0.2s ease;
 }
 
-/* Hover like previous UI */
-
 .notification-row:hover .notification-background .notification {
-  background: alpha(@secondary_container, 0.35);
+  background: rgba(50, 55, 65, 0.95);
+  border-color: rgba(234, 178, 194, 0.4);
 }
 
-/* Notification content spacing */
-
-.notification-content {
-  padding: 2px;   /* ↓ Reduced */
-}
-
-/* Notification image */
+.notification-content { padding: 2px; }
 
 .notification image {
   border-radius: 10px;
   margin-right: 8px;
-  min-width: 36px;   /* ↓ Smaller */
+  min-width: 36px;
   min-height: 36px;
 }
-
-/* ---------- Smaller Text ---------- */
 
 .summary {
   font-size: 13px;
   font-weight: 600;
+  color: #ebddbc;
 }
 
 .body {
   font-size: 11px;
-  opacity: 0.85;
+  color: rgba(235, 221, 188, 0.7);
 }
-
-/* Close Button Classic */
 
 .close-button {
   background: transparent;
+  color: #EAB2C2;
   border-radius: 50%;
-  margin-top: 4px;
-  margin-right: 4px;
   min-width: 20px;
   min-height: 20px;
 }
 
 .close-button:hover {
-  background: alpha(@primary, 0.25);
+  background: rgba(234, 178, 194, 0.25);
 }
 
-/* ---------------- MPRIS (UNCHANGED - YOUR PERFECT PART) ---------------- */
-
+/* MPRIS */
 .mpris {
-  background: alpha(@surface_container, 0.6);
+  background: rgba(27, 30, 37, 0.7);
   border-radius: 12px;
-  margin: 8px;
+  border: 1px solid rgba(131, 166, 191, 0.2);
+  margin: 6px;
   padding: 8px;
-  transform: scale(0.8);
-  transform-origin: top center;
 }
 
 .mpris-title {
   font-size: 12px;
   font-weight: bold;
-  color: @on_surface;
+  color: #ebddbc;
 }
 
 .mpris-artist {
   font-size: 10px;
-  color: alpha(@on_surface, 0.7);
-}
-
-.mpris-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 6px;
-  gap: 10px;
+  color: rgba(235, 221, 188, 0.6);
 }
 
 .mpris-button {
   font-size: 18px;
-  color: @primary;
+  color: #EAB2C2;
   opacity: 0.8;
 }
 
-.mpris-button:hover {
-  opacity: 1;
-}
+.mpris-button:hover { opacity: 1; }
 
-/* ---------------- Bottom Buttons (UNCHANGED) ---------------- */
-
+/* Bottom buttons */
 .widget-buttons-grid {
   margin: 6px;
   padding: 4px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
 }
 
 .widget-buttons-grid button {
-  background: @surface_container;
+  background: rgba(27, 30, 37, 0.9);
   border-radius: 10px;
   padding: 8px 12px;
   font-size: 18px;
-  color: @primary;
-  border: 1px solid @primary;
+  color: #EAB2C2;
+  border: 1px solid rgba(234, 178, 194, 0.3);
   transition: 0.2s ease;
 }
 
 .widget-buttons-grid button:hover {
-  transform: scale(1.1);
-  background: @primary;
-  color: @on_primary;
+  background: rgba(234, 178, 194, 0.2);
+  border-color: #EAB2C2;
 }
 
 .widget-buttons-grid button:checked {
-  background: @primary;
-  color: @on_primary;
+  background: #EAB2C2;
+  color: #1b1e25;
+  border-color: #EAB2C2;
 }
 
-/* ---------------- Widget Margins ---------------- */
-
-.widget-title {
-  margin: 0 3px;
+/* Floating notification popup */
+.floating-notifications {
+  background: transparent;
 }
 
-.widget-mpris {
-  margin-bottom: 0px;
-  margin-top: -3px;
-  margin-left: -8px;
-  margin-right: -8px;
-}
-
-/* ---------------- Remove GTK Focus Outline ---------------- */
-
+/* Remove GTK focus outline */
 *:focus {
   outline: none;
   box-shadow: none;
